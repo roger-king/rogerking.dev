@@ -1,27 +1,30 @@
-name: Deploy Github Page
+name: Deploy Github Pages
 
 on: [push]
 
 jobs:
-    build-and-deploy:
+    build:
         runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [12.x]
         steps:
             - uses: actions/checkout@v1
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node-version }}
-            - name: Install yarn
-              run: npm install -g yarn
+                  - name: Install yarn
+                  run: npm install -g yarn
             - name: Build
-              run: |
-                  yarn install
-                  yarn build
-              env:
-                  CI: true
+                run: |
+                    yarn install
+                    yarn build
+                env:
+                    CI: true
             - name: Deploy
-              uses: JamesIves/github-pages-deploy-action@releases/v3
-              with:
-                  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-                  BRANCH: gh-pages
-                  FOLDER: build
+                uses: JamesIves/github-pages-deploy-action@releases/v3
+                with:
+                    ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+                    BRANCH: gh-pages
+                    FOLDER: build
