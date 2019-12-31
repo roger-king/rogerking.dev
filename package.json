@@ -1,5 +1,6 @@
 {
     "name": "rogerking.dev",
+    "homepage": "http://roger-king.github.io/rogerking.dev",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -21,6 +22,7 @@
         "eslint-plugin-import": "^2.19.1",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-prettier": "^3.1.2",
+        "gh-pages": "^2.1.1",
         "grommet": "^2.9.0",
         "grommet-icons": "^4.4.0",
         "husky": "^3.1.0",
@@ -37,6 +39,8 @@
     "scripts": {
         "lint": "eslint src --ext .ts,.tsx",
         "lint:fix": "eslint src --fix --ext .ts,.tsx",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
