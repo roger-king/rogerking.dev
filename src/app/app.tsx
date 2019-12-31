@@ -6,6 +6,7 @@ import { theme, workHistory } from './app.constants';
 import { Work } from '../types';
 import { GlobalContext } from './contexts/global';
 import AppRouter from './app.router';
+import Banner from './components/banner';
 import Loading from './components/loading';
 import Header from './components/header';
 import Footer from './components/footer';
@@ -15,6 +16,7 @@ const App: React.FC = (): JSX.Element => {
 
     return (
         <Grommet theme={theme} full>
+            <Banner />
             <Router>
                 <Header />
                 <Main pad={{ left: '150px', right: '150px' }}>
