@@ -14,7 +14,7 @@ const App: React.FC = (): JSX.Element => {
     const [selectedWork, setSelectedWork] = useState<Work>(workHistory[0]);
 
     return (
-        <Grommet theme={theme}>
+        <Grommet theme={theme} full>
             <Router>
                 <Header />
                 <Main pad={{ left: '150px', right: '150px' }}>

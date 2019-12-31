@@ -6,11 +6,11 @@ import { GlobalContext } from '../contexts/global';
 const AboutPage: React.FC = (): JSX.Element => {
     const { selectedWork } = useContext(GlobalContext);
     return (
-        <Box direction="column">
-            <Box direction="row-responsive" align="center" fill>
-                <Avatar />
+        <Box direction="column" fill>
+            <Box direction="row-responsive" align="center" justify="center" gap="medium" fill>
+                <Avatar imgName="working" />
                 <Text>
-                    I&apos;m a {selectedWork.title} @
+                    I am currently a {selectedWork.title} @
                     <Anchor target="_blank" href={selectedWork.website}>
                         {selectedWork.company}
                     </Anchor>{' '}
