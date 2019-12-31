@@ -5,13 +5,14 @@ import { Work } from '../types';
 export const theme: ThemeType = deepMerge(base, {
     global: {
         colors: {
-            background: '#1a1d21',
+            background: '#090909',
             brand: '#282c34',
-            'accent-1': '#139DDB',
-            'accent-2': '#EF424C',
-            'accent-3': '#F8F0EE',
-            focus: 'accent-1',
-            warning: '#B33A3A',
+            'accent-1': '#B8860B',
+            'accent-2': '#CC9900',
+            'accent-3': '#D9B01C',
+            focus: '#333333',
+            critical: '#B33A3A',
+            warning: '#D9B01C',
         },
         font: {
             family: 'Dosis, sans-serif',
