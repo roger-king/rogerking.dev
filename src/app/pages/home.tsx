@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Box, Heading, Text, Select } from 'grommet';
 import { workHistory } from '../app.constants';
-import { Work } from '../../types';
+import { GlobalContext } from '../contexts/global';
 
 const HomePage: React.FC = () => {
-    const [currentWork, setCurrentWork] = useState<Work>(workHistory[0]);
+    const { selectedWork, setSelectedWork } = useContext(GlobalContext);
 
     return (
         <Box align="center" justify="center" fill>
             <Heading>Roger King</Heading>
             <Text>
                 <i>
-                    {currentWork.title} @{' '}
+                    {selectedWork.title} @{' '}
                     <Select
                         options={workHistory.map(w => w.company)}
-                        value={currentWork.company}
+                        value={selectedWork.company}
                         size="small"
                         onChange={e => {
                             const selectedCompany = workHistory.find(w => e.value === w.company);
                             if (selectedCompany) {
-                                setCurrentWork(selectedCompany);
+                                setSelectedWork(selectedCompany);
                             } else {
                                 console.error('oops cannot find company');
                             }
