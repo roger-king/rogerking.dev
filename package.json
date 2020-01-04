@@ -1,6 +1,6 @@
 {
     "name": "rogerking.dev",
-    "homepage": "https://rogerking.dev",
+    "homepage": ".",
     "version": "0.1.0",
     "private": true,
     "dependencies": {

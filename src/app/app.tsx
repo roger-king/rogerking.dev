@@ -17,7 +17,7 @@ const App: React.FC = (): JSX.Element => {
     return (
         <Grommet theme={theme} full>
             <Banner message="Under development" />
-            <Router basename="/rogerking.dev">
+            <Router basename="/">
                 <Header />
                 <Main pad={{ left: '150px', right: '150px' }} overflow="auto" fill>
                     <GlobalContext.Provider
