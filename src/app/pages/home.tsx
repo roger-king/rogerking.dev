@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
                     Software Engineer.
                 </Heading>
                 <Button
-                    style={{ width: '400px', height: '80px' }}
+                    style={{ width: '30%', height: '80px' }}
                     label="Get in Touch"
                     primary
                     onClick={() => {
