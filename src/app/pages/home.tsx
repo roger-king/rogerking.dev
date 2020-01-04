@@ -1,19 +1,36 @@
 import React from 'react';
-import { Box, Button, Text } from 'grommet';
+import { Box, Button, Heading, Text } from 'grommet';
+import { useHistory } from 'react-router';
 import Avatar from '../components/avatar';
-import SkillsList from '../components/card/skills';
 
 const HomePage: React.FC = () => {
+    const history = useHistory();
+
     return (
-        <Box fill>
-            <Box align="center" justify="center" fill>
-                <Avatar imgName="hey" />
-                <Text margin="small" size="large">
-                    I&apos;m a software engineer.
-                </Text>
-                <Button label="Learn more" primary />
+        <Box direction="column" gap="medium">
+            <Box align="center" justify="center" gap="medium">
+                <Box>
+                    <Avatar imgName="hey" />
+                </Box>
+                <Heading level="2" margin="small">
+                    Roger King
+                </Heading>
+                <Heading level="3" margin="small">
+                    Software Engineer.
+                </Heading>
+                <Button
+                    style={{ width: '400px', height: '80px' }}
+                    label="Get in Touch"
+                    primary
+                    onClick={() => {
+                        history.push('/contact');
+                    }}
+                />
             </Box>
-            <SkillsList />
+            <Box align="center">
+                <Heading level="1">About</Heading>
+                <Text>Passionate software engineer, incorporating the latest cloud native technologies to build</Text>
+            </Box>
         </Box>
     );
 };

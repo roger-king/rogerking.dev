@@ -16,10 +16,10 @@ const App: React.FC = (): JSX.Element => {
 
     return (
         <Grommet theme={theme} full>
-            <Banner />
+            <Banner message="Under development" />
             <Router>
                 <Header />
-                <Main pad={{ left: '150px', right: '150px' }}>
+                <Main pad={{ left: '150px', right: '150px' }} overflow="auto" fill>
                     <GlobalContext.Provider
                         value={{
                             selectedWork,
@@ -31,8 +31,8 @@ const App: React.FC = (): JSX.Element => {
                         </Suspense>
                     </GlobalContext.Provider>
                 </Main>
-                <Footer />
             </Router>
+            <Footer />
         </Grommet>
     );
 };

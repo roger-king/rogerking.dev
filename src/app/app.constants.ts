@@ -20,7 +20,7 @@ export const theme: ThemeType = deepMerge(base, {
     },
     button: {
         border: {
-            radius: '7px',
+            radius: '3px',
         },
     },
     heading: {
@@ -36,12 +36,12 @@ export const theme: ThemeType = deepMerge(base, {
             },
             3: {
                 font: {
-                    family: 'Pacifico, cursive',
+                    family: 'Dosis, sans-serif',
                 },
             },
             4: {
                 font: {
-                    family: 'Pacifico, cursive',
+                    family: 'Dosis, sans-serif',
                 },
             },
         },
