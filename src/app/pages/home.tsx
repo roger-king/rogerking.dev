@@ -57,7 +57,7 @@ const HomePage: React.FC = () => {
                 <Box direction="column" gap="medium">
                     {techStack.map(
                         (t: Tech): JSX.Element => {
-                            return <Card image={t.img} category={t.category} />;
+                            return <Card key={t.img} image={t.img} category={t.category} />;
                         },
                     )}
                 </Box>
