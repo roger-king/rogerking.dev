@@ -15,7 +15,7 @@ const App: React.FC = (): JSX.Element => {
     const [selectedWork, setSelectedWork] = useState<Work>(workHistory[0]);
 
     return (
-        <Grommet theme={theme} full>
+        <Grommet theme={theme}>
             <Banner message="Under development" />
             <Router basename="/">
                 <Header />
@@ -25,7 +25,7 @@ const App: React.FC = (): JSX.Element => {
                         const padding = isMobile ? { left: '50px', right: '50px' } : { left: '150px', right: '150px' };
 
                         return (
-                            <Main pad={padding} overflow="auto" fill>
+                            <Main pad={padding} flex="grow" basis="full">
                                 <GlobalContext.Provider
                                     value={{
                                         selectedWork,

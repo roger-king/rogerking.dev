@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Button, Heading, Text, ResponsiveContext } from 'grommet';
 import { useHistory } from 'react-router';
+import { workHistory } from '../app.constants';
 import Avatar from '../components/avatar';
 
 const HomePage: React.FC = () => {
@@ -43,7 +44,7 @@ const HomePage: React.FC = () => {
                         development process of applications.
                     </Text>
                     <Text size={textSize}>
-                        I am currently employeed at Compass as a Senior Software Engineer (Tech Lead) and actively
+                        I am currently employeed at {workHistory[0].company} as a {workHistory[0].title} and actively
                         building and contributing to open source projects.
                     </Text>
                 </Box>
