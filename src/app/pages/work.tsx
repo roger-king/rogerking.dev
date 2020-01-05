@@ -6,7 +6,7 @@ import { GlobalContext } from '../contexts/global';
 const AboutPage: React.FC = (): JSX.Element => {
     const { selectedWork } = useContext(GlobalContext);
     return (
-        <Box direction="column" fill>
+        <Box direction="column">
             <Box direction="row-responsive" align="center" justify="center" gap="medium" fill>
                 <Avatar imgName="working" />
                 <Text>

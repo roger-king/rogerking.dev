@@ -1,5 +1,5 @@
 import React, { useState, Suspense } from 'react';
-import { Grommet, Main, ResponsiveContext } from 'grommet';
+import { Grommet, Box, ResponsiveContext } from 'grommet';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { theme, workHistory } from './app.constants';
@@ -15,7 +15,7 @@ const App: React.FC = (): JSX.Element => {
     const [selectedWork, setSelectedWork] = useState<Work>(workHistory[0]);
 
     return (
-        <Grommet theme={theme}>
+        <Grommet theme={theme} full>
             <Banner message="Under development" />
             <Router basename="/">
                 <Header />
@@ -25,7 +25,7 @@ const App: React.FC = (): JSX.Element => {
                         const padding = isMobile ? { left: '50px', right: '50px' } : { left: '150px', right: '150px' };
 
                         return (
-                            <Main pad={{ ...padding, bottom: '40px' }} flex="grow" basis="full">
+                            <Box pad={{ ...padding, bottom: '40px' }} fill>
                                 <GlobalContext.Provider
                                     value={{
                                         selectedWork,
@@ -36,7 +36,7 @@ const App: React.FC = (): JSX.Element => {
                                         <AppRouter />
                                     </Suspense>
                                 </GlobalContext.Provider>
-                            </Main>
+                            </Box>
                         );
                     }}
                 </ResponsiveContext.Consumer>

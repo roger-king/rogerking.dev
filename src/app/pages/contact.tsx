@@ -4,7 +4,7 @@ import ContactForm from '../components/forms/contact';
 
 const ContactPage: React.FC = (): JSX.Element => {
     return (
-        <Box fill>
+        <Box>
             <Heading>Contact</Heading>
             <ContactForm />
         </Box>
