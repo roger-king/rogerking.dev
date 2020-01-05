@@ -60,7 +60,7 @@ const MyHeader: React.FC = (): JSX.Element => {
         <Header margin={{ left: '50px', right: '50px', top: '30px' }}>
             <Box direction="row" gap="medium">
                 {navigation.map((n: Partial<NavButtonProps>) => {
-                    return <NavButton route={n.route!} label={n.label!} changeRoute={changeRoute} />;
+                    return <NavButton key={n.route} route={n.route!} label={n.label!} changeRoute={changeRoute} />;
                 })}
             </Box>
         </Header>
