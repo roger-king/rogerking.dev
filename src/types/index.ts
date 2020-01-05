@@ -5,6 +5,12 @@ export interface Work {
     location: string;
 }
 
+export interface Tech {
+    img: string;
+    category: 'Front End' | 'Back End' | 'DevOps';
+    description: string;
+}
+
 export interface GlobalContextType {
     selectedWork: Work;
     setSelectedWork(w: Work): void;

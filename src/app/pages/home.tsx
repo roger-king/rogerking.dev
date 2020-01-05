@@ -1,8 +1,11 @@
 import React from 'react';
 import { Box, Button, Heading, Text, ResponsiveContext } from 'grommet';
 import { useHistory } from 'react-router';
-import { workHistory } from '../app.constants';
+import { techStack, workHistory } from '../app.constants';
 import Avatar from '../components/avatar';
+import HeadLine from '../components/headline';
+import { Tech } from '../../types';
+import Card from '../components/card';
 
 const HomePage: React.FC = () => {
     const size = React.useContext(ResponsiveContext);
@@ -33,7 +36,7 @@ const HomePage: React.FC = () => {
                 />
             </Box>
             <Box align="center">
-                <Heading level="1">About</Heading>
+                <HeadLine level="3">About</HeadLine>
                 <Box width="large" gap="large">
                     <Text size={textSize}>
                         Passionate software engineer, incorporating the latest cloud native technologies to build
@@ -47,6 +50,16 @@ const HomePage: React.FC = () => {
                         I am currently employeed at {workHistory[0].company} as a {workHistory[0].title} and actively
                         building and contributing to open source projects.
                     </Text>
+                </Box>
+            </Box>
+            <Box align="center">
+                <HeadLine level="3">Tech Stack</HeadLine>
+                <Box direction="column" gap="medium">
+                    {techStack.map(
+                        (t: Tech): JSX.Element => {
+                            return <Card image={t.img} category={t.category} />;
+                        },
+                    )}
                 </Box>
             </Box>
         </Box>

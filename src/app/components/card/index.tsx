@@ -1,14 +1,13 @@
 import React from 'react';
-import { Box, Heading } from 'grommet';
+import { Box, Image, Heading } from 'grommet';
 
 interface CardProps {
-    title: string;
-    icon: React.ReactNode;
-    body: JSX.Element;
+    image: string;
+    category?: string;
 }
 
 const Card: React.FC<CardProps> = (props: CardProps) => {
-    const { title, icon, body } = props;
+    const { image, category } = props;
 
     return (
         <Box
@@ -16,13 +15,13 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
             align="center"
             width={{ min: 'auto' }}
             height={{ min: 'auto' }}
-            direction="column"
+            direction="row"
             pad="medium"
+            gap="large"
             style={{ borderRadius: '8px' }}
         >
-            {icon}
-            <Heading level="4">{title}</Heading>
-            {body}
+            <Image width="200px" src={`${process.env.PUBLIC_URL}/imgs/${image}.png`} />
+            <Heading level="3">{category}</Heading>
         </Box>
     );
 };

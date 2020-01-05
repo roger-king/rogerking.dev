@@ -1,6 +1,6 @@
 import { deepMerge } from 'grommet/utils';
 import { base, ThemeType } from 'grommet/themes';
-import { Work } from '../types';
+import { Tech, Work } from '../types';
 
 export const theme: ThemeType = deepMerge(base, {
     global: {
@@ -21,6 +21,11 @@ export const theme: ThemeType = deepMerge(base, {
     button: {
         border: {
             radius: '3px',
+        },
+    },
+    worldMap: {
+        place: {
+            base: '10px',
         },
     },
     heading: {
@@ -78,6 +83,65 @@ export const workHistory: Work[] = [
         title: 'Genius',
         website: 'https://www.apple.com',
         location: 'Greenwich, CT',
+    },
+];
+
+export const techStack: Tech[] = [
+    {
+        img: 'react',
+        category: 'Front End',
+        description: 'A multi-facet client side framework enabling for web and mobile development',
+    },
+    {
+        img: 'angular',
+        category: 'Front End',
+        description: 'An MVC Framework that is written in Python.',
+    },
+    {
+        img: 'graphql',
+        category: 'Back End',
+        description: 'Middleware data-fetching mechanism',
+    },
+    {
+        img: 'django',
+        category: 'Back End',
+        description: 'An MVC Framework that is written in Python.',
+    },
+    {
+        img: 'fastapi',
+        category: 'Back End',
+        description: 'A minimal async python framework.',
+    },
+    {
+        img: 'golang',
+        category: 'Back End',
+        description: '',
+    },
+    {
+        img: 'nodejs',
+        category: 'Back End',
+        description: '',
+    },
+    {
+        img: 'aws',
+        category: 'DevOps',
+        description: 'Leading cloud provider with many services to help build your application features. ',
+    },
+    {
+        img: 'gcp',
+        category: 'DevOps',
+        description: 'An MVC Framework that is written in Python.',
+    },
+    {
+        img: 'terraform',
+        category: 'DevOps',
+        description:
+            'An infrastructure as code language that creates reproducable and mantainable infrastructure in all ',
+    },
+    {
+        img: 'k8s',
+        category: 'DevOps',
+        description: '',
     },
 ];
 
