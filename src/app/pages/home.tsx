@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
                     style={{ width: '30%', height: '80px' }}
                     label="Get in Touch"
                     primary
-                    onClick={() => {
+                    onClick={(): void => {
                         history.push('/contact');
                     }}
                 />

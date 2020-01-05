@@ -1,17 +1,17 @@
 import React from 'react';
 import { Button } from 'grommet';
-import { useHistory, useRouteMatch } from 'react-router';
+import { useRouteMatch } from 'react-router';
 import styled from 'styled-components';
 
 export interface NavButtonProps {
     className?: string;
     label: string;
     route: string;
+    changeRoute: (route: string) => void;
 }
 
 export const UnstyledNavButton: React.FC<NavButtonProps> = (props: NavButtonProps) => {
-    const { className, label, route } = props;
-    const history = useHistory();
+    const { className, label, route, changeRoute } = props;
 
     const isActive = useRouteMatch({
         path: route,
@@ -26,7 +26,7 @@ export const UnstyledNavButton: React.FC<NavButtonProps> = (props: NavButtonProp
             style={{ borderBottom: isActive ? '3px solid' : '0px solid' }}
             plain
             onClick={() => {
-                history.push(route);
+                changeRoute(route);
             }}
         />
     );
