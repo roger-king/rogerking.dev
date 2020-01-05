@@ -1,9 +1,12 @@
 import React from 'react';
-import { Box, Button, Heading, Text } from 'grommet';
+import { Box, Button, Heading, Text, ResponsiveContext } from 'grommet';
 import { useHistory } from 'react-router';
 import Avatar from '../components/avatar';
 
 const HomePage: React.FC = () => {
+    const size = React.useContext(ResponsiveContext);
+    const isMobile = size === 'small';
+    const textSize = isMobile ? '26px' : '16px';
     const history = useHistory();
 
     return (
@@ -30,15 +33,15 @@ const HomePage: React.FC = () => {
             <Box align="center">
                 <Heading level="1">About</Heading>
                 <Box width="large" gap="large">
-                    <Text size="26px">
+                    <Text size={textSize}>
                         Passionate software engineer, incorporating the latest cloud native technologies to build
                         reactive user interfaces, scalable backend systems, and maintainable infrastructure.
                     </Text>
-                    <Text size="26px">
+                    <Text size={textSize}>
                         I am an avid developer for developers. Aspiring to build tooling to help streamline the
                         development process of applications.
                     </Text>
-                    <Text size="26px">
+                    <Text size={textSize}>
                         I am currently employeed at Compass as a Senior Software Engineer (Tech Lead) and actively
                         building and contributing to open source projects.
                     </Text>
