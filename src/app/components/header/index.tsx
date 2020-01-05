@@ -30,6 +30,12 @@ const MyHeader: React.FC = (): JSX.Element => {
         history.push(route);
     };
 
+    const renderNavBtns = () => {
+        return navigation.map((n: Partial<NavButtonProps>) => {
+            return <NavButton key={n.route} route={n.route!} label={n.label!} changeRoute={changeRoute} />;
+        });
+    };
+
     if (isMobile) {
         return (
             <Header direction="column" fill="horizontal">
@@ -41,6 +47,7 @@ const MyHeader: React.FC = (): JSX.Element => {
                 </Box>
                 {showNav && (
                     <Box
+                        animation="fadeIn"
                         direction="row"
                         gap="medium"
                         background="light-3"
@@ -49,9 +56,7 @@ const MyHeader: React.FC = (): JSX.Element => {
                         align="center"
                         justify="center"
                     >
-                        {navigation.map((n: Partial<NavButtonProps>) => {
-                            return <NavButton route={n.route!} label={n.label!} changeRoute={changeRoute} />;
-                        })}
+                        {renderNavBtns()}
                     </Box>
                 )}
             </Header>
@@ -61,9 +66,7 @@ const MyHeader: React.FC = (): JSX.Element => {
     return (
         <Header margin={{ left: '50px', right: '50px', top: '30px' }}>
             <Box direction="row" gap="medium">
-                {navigation.map((n: Partial<NavButtonProps>) => {
-                    return <NavButton key={n.route} route={n.route!} label={n.label!} changeRoute={changeRoute} />;
-                })}
+                {renderNavBtns()}
             </Box>
         </Header>
     );
