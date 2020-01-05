@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import { techStack, workHistory } from '../app.constants';
 import Avatar from '../components/avatar';
 import HeadLine from '../components/headline';
+import { CircleMeter } from '../components/meter/circle';
 import { Tech } from '../../types';
 import Card from '../components/card';
 
@@ -52,6 +53,15 @@ const HomePage: React.FC = () => {
                     </Text>
                 </Box>
             </Box>
+            <Box align="center" gap="medium">
+                <HeadLine level="3">Language Confidence</HeadLine>
+                <Box direction="row-responsive" gap="medium">
+                    <CircleMeter label="Java/Typescript" value={99} />
+                    <CircleMeter label="GoLang" value={88} />
+                    <CircleMeter label="Python" value={75} />
+                    <CircleMeter label="Java" value={60} />
+                </Box>
+            </Box>
             <Box align="center">
                 <HeadLine level="3">Tech Stack</HeadLine>
                 <Box direction="column" gap="medium">
@@ -60,6 +70,12 @@ const HomePage: React.FC = () => {
                             return <Card key={t.img} image={t.img} category={t.category} />;
                         },
                     )}
+                </Box>
+            </Box>
+            <Box align="center">
+                <HeadLine level="3">References</HeadLine>
+                <Box direction="column" gap="medium">
+                    coming soon...
                 </Box>
             </Box>
         </Box>
