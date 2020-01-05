@@ -29,7 +29,20 @@ const HomePage: React.FC = () => {
             </Box>
             <Box align="center">
                 <Heading level="1">About</Heading>
-                <Text>Passionate software engineer, incorporating the latest cloud native technologies to build</Text>
+                <Box width="large" gap="large">
+                    <Text size="26px">
+                        Passionate software engineer, incorporating the latest cloud native technologies to build
+                        reactive user interfaces, scalable backend systems, and maintainable infrastructure.
+                    </Text>
+                    <Text size="26px">
+                        I am an avid developer for developers. Aspiring to build tooling to help streamline the
+                        development process of applications.
+                    </Text>
+                    <Text size="26px">
+                        I am currently employeed at Compass as a Senior Software Engineer (Tech Lead) and actively
+                        building and contributing to open source projects.
+                    </Text>
+                </Box>
             </Box>
         </Box>
     );
