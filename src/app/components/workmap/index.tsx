@@ -9,23 +9,23 @@ const WorkMap = () => {
     return (
         <WorldMap
             fill="horizontal"
-            color="light-3"
+            color="light-1"
             continents={[
                 {
                     name: 'North America',
-                    color: '#0283df',
+                    color: 'light-5',
                 },
             ]}
             places={[
                 {
                     name: 'Connecticut',
                     location: [41.6032, -73.0877],
-                    color: 'accent-1',
+                    color: '#0283df',
                 },
                 {
                     name: 'New York',
                     location: [40.7128, -74.006],
-                    color: 'neutral-1',
+                    color: '#0283df',
                 },
             ]}
         />
