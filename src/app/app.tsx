@@ -23,7 +23,7 @@ const App: React.FC = (): JSX.Element => {
                     {(size: string) => {
                         const isMobile = size === 'small';
                         const padding = isMobile ? { left: '50px', right: '50px' } : { left: '150px', right: '150px' };
-                        console.log(size);
+
                         return (
                             <Main pad={padding} overflow="auto" fill>
                                 <GlobalContext.Provider
