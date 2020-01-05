@@ -34,7 +34,9 @@ const MyHeader: React.FC = (): JSX.Element => {
         return (
             <Header direction="column" fill="horizontal">
                 <Box direction="row" gap="medium">
-                    <Heading>Roger King</Heading>
+                    <Heading onClick={() => changeRoute('/')} style={{ cursor: 'pointer' }}>
+                        Roger King
+                    </Heading>
                     <Button icon={<Menu />} onClick={() => setShowNav(!showNav)} />
                 </Box>
                 {showNav && (
