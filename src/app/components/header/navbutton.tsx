@@ -23,7 +23,7 @@ export const UnstyledNavButton: React.FC<NavButtonProps> = (props: NavButtonProp
         <Button
             className={className}
             label={label}
-            style={{ borderBottom: isActive ? '3px solid' : '0px solid' }}
+            style={{ borderBottom: isActive?.isExact ? '3px solid' : '0px solid' }}
             plain
             onClick={() => {
                 changeRoute(route);
