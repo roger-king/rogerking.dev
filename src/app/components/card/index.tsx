@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Image, Heading } from 'grommet';
+import { Box, Image, Heading, ResponsiveContext } from 'grommet';
 
 interface CardProps {
     image: string;
@@ -8,19 +8,25 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = (props: CardProps) => {
     const { image, category } = props;
+    const size = React.useContext(ResponsiveContext);
+    const isMobile = size === 'small';
+    const containerHeight = isMobile ? '150px' : '200px';
+    const imgSize = isMobile ? '70px' : '200px';
 
     return (
         <Box
             border="all"
             align="center"
             width={{ min: 'auto' }}
-            height={{ min: 'auto' }}
-            direction="row"
+            height={containerHeight}
+            direction="row-responsive"
             pad="medium"
             gap="large"
-            style={{ borderRadius: '8px' }}
+            style={{ opacity: '1' }}
+            background="rgba(23, 57, 67, 0.69)"
+            justify="center"
         >
-            <Image width="200px" src={`${process.env.PUBLIC_URL}/imgs/${image}.png`} />
+            <Image width={imgSize} src={`${process.env.PUBLIC_URL}/imgs/${image}.png`} />
             <Heading level="3">{category}</Heading>
         </Box>
     );
