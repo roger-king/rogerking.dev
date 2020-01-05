@@ -23,6 +23,9 @@ export const theme: ThemeType = deepMerge(base, {
             radius: '3px',
         },
     },
+    meter: {
+        color: 'brand',
+    },
     worldMap: {
         place: {
             base: '10px',
