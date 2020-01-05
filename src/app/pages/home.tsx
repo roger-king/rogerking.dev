@@ -6,7 +6,7 @@ import Avatar from '../components/avatar';
 const HomePage: React.FC = () => {
     const size = React.useContext(ResponsiveContext);
     const isMobile = size === 'small';
-    const textSize = isMobile ? '26px' : '16px';
+    const textSize = isMobile ? '22px' : '26px';
     const history = useHistory();
 
     return (

@@ -12,9 +12,6 @@ import Header from './components/header';
 import Footer from './components/footer';
 
 const App: React.FC = (): JSX.Element => {
-    const size = React.useContext(ResponsiveContext);
-    const isMobile = size === 'small';
-    const padding = isMobile ? { left: '15px', right: '15px' } : { left: '150px', right: '150px' };
     const [selectedWork, setSelectedWork] = useState<Work>(workHistory[0]);
 
     return (
@@ -22,18 +19,27 @@ const App: React.FC = (): JSX.Element => {
             <Banner message="Under development" />
             <Router basename="/">
                 <Header />
-                <Main pad={padding} overflow="auto" fill>
-                    <GlobalContext.Provider
-                        value={{
-                            selectedWork,
-                            setSelectedWork,
-                        }}
-                    >
-                        <Suspense fallback={<Loading />}>
-                            <AppRouter />
-                        </Suspense>
-                    </GlobalContext.Provider>
-                </Main>
+                <ResponsiveContext.Consumer>
+                    {(size: string) => {
+                        const isMobile = size === 'small';
+                        const padding = isMobile ? { left: '50px', right: '50px' } : { left: '150px', right: '150px' };
+                        console.log(size);
+                        return (
+                            <Main pad={padding} overflow="auto" fill>
+                                <GlobalContext.Provider
+                                    value={{
+                                        selectedWork,
+                                        setSelectedWork,
+                                    }}
+                                >
+                                    <Suspense fallback={<Loading />}>
+                                        <AppRouter />
+                                    </Suspense>
+                                </GlobalContext.Provider>
+                            </Main>
+                        );
+                    }}
+                </ResponsiveContext.Consumer>
             </Router>
             <Footer />
         </Grommet>
