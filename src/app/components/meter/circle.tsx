@@ -9,7 +9,7 @@ interface MeterProps {
 export const CircleMeter: React.FC<MeterProps> = (props: MeterProps) => {
     const { value, label } = props;
     return (
-        <Box align="center" background="light-5" pad="large" elevation="medium">
+        <Box align="center" background="light-5" pad="large" elevation="medium" width="medium" margin="small">
             <Stack anchor="center">
                 <Meter type="circle" background="light-3" values={[{ value }]} size="xsmall" thickness="small" />
                 <Box direction="row" align="center" pad={{ bottom: 'xsmall' }}>
