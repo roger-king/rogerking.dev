@@ -25,7 +25,7 @@ const App: React.FC = (): JSX.Element => {
                         const padding = isMobile ? { left: '50px', right: '50px' } : { left: '150px', right: '150px' };
 
                         return (
-                            <Box pad={{ ...padding, bottom: '40px' }} fill>
+                            <Box pad={{ ...padding, bottom: '40px' }}>
                                 <GlobalContext.Provider
                                     value={{
                                         selectedWork,
