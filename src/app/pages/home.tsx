@@ -7,12 +7,13 @@ const HomePage: React.FC = () => {
     const size = React.useContext(ResponsiveContext);
     const isMobile = size === 'small';
     const textSize = isMobile ? '22px' : '26px';
+    const btnSize = isMobile ? '80%' : '30%';
     const history = useHistory();
 
     return (
         <Box direction="column" gap="medium">
-            <Box align="center" justify="center" gap="medium">
-                <Box>
+            <Box align="center" justify="center" gap="medium" flex="grow">
+                <Box margin="small">
                     <Avatar imgName="hey" />
                 </Box>
                 <Heading level="2" margin="small">
@@ -22,7 +23,7 @@ const HomePage: React.FC = () => {
                     Software Engineer.
                 </Heading>
                 <Button
-                    style={{ width: '30%', height: '80px' }}
+                    style={{ width: btnSize, height: '80px' }}
                     label="Get in Touch"
                     primary
                     onClick={(): void => {
