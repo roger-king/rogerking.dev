@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Heading, Text, ResponsiveContext } from 'grommet';
+import { Box, Button, Carousel, Heading, Text, ResponsiveContext } from 'grommet';
 import { useHistory } from 'react-router';
 import { techStack, workHistory } from '../app.constants';
 import Avatar from '../components/avatar';
@@ -9,6 +9,7 @@ import { Tech, LanguageConfidence, Reference } from '../../types';
 import Card from '../components/card';
 import { getLanguages } from '../data/languages';
 import { getReferences } from '../data/references';
+import { addLineBreak } from '../utils/format';
 
 const HomePage: React.FC = () => {
     const size = React.useContext(ResponsiveContext);
@@ -78,19 +79,21 @@ const HomePage: React.FC = () => {
             <Box align="center">
                 <HeadLine level="3">References</HeadLine>
                 <Box direction="column" gap="medium">
-                    {getReferences().map((r: Reference) => (
-                        <Box key={r.name} gap="small" align="center" width={{ max: '600px' }}>
-                            <Heading level="2" margin="xsmall">
-                                {r.name}
-                            </Heading>
-                            <HeadLine level="3" margin="xsmall">
-                                {r.relation}
-                            </HeadLine>
-                            <Box pad="medium">
-                                <Text>{r.testimonial}</Text>
+                    <Carousel fill>
+                        {getReferences().map((r: Reference) => (
+                            <Box key={r.name} gap="small" align="center" width={{ max: '600px' }} margin="large">
+                                <Heading level="2" margin="xsmall">
+                                    {r.name}
+                                </Heading>
+                                <HeadLine level="3" margin="xsmall">
+                                    {r.relation}
+                                </HeadLine>
+                                <Box pad="medium">
+                                    <Text>{addLineBreak(r.testimonial)}</Text>
+                                </Box>
                             </Box>
-                        </Box>
-                    ))}
+                        ))}
+                    </Carousel>
                 </Box>
             </Box>
         </Box>
