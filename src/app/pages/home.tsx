@@ -5,9 +5,10 @@ import { techStack, workHistory } from '../app.constants';
 import Avatar from '../components/avatar';
 import HeadLine from '../components/headline';
 import { CircleMeter } from '../components/meter/circle';
-import { Tech, LanguageConfidence } from '../../types';
+import { Tech, LanguageConfidence, Reference } from '../../types';
 import Card from '../components/card';
 import { getLanguages } from '../data/languages';
+import { getReferences } from '../data/references';
 
 const HomePage: React.FC = () => {
     const size = React.useContext(ResponsiveContext);
@@ -59,7 +60,7 @@ const HomePage: React.FC = () => {
                 <Box width={{ max: '1000px' }} justify="center" direction="row-responsive" flex="grow" wrap>
                     {getLanguages().map(
                         (l: LanguageConfidence): JSX.Element => (
-                            <CircleMeter label={l.language} value={l.value} />
+                            <CircleMeter key={l.language} label={l.language} value={l.value} />
                         ),
                     )}
                 </Box>
@@ -77,7 +78,19 @@ const HomePage: React.FC = () => {
             <Box align="center">
                 <HeadLine level="3">References</HeadLine>
                 <Box direction="column" gap="medium">
-                    coming soon...
+                    {getReferences().map((r: Reference) => (
+                        <Box key={r.name} gap="small" align="center" border="all" pad="large">
+                            <Heading level="2" margin="xsmall">
+                                {r.name}
+                            </Heading>
+                            <HeadLine level="3" margin="xsmall">
+                                {r.relation}
+                            </HeadLine>
+                            <Box pad="medium">
+                                <Text>{r.testimonial}</Text>
+                            </Box>
+                        </Box>
+                    ))}
                 </Box>
             </Box>
         </Box>

@@ -20,3 +20,9 @@ export interface GlobalContextType {
     selectedWork: Work;
     setSelectedWork(w: Work): void;
 }
+
+export interface Reference {
+    name: string;
+    relation: string;
+    testimonial: string;
+}
