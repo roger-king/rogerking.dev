@@ -55,7 +55,7 @@ const HomePage: React.FC = () => {
             </Box>
             <Box align="center" gap="medium">
                 <HeadLine level="3">Language Confidence</HeadLine>
-                <Box width={{ max: '1000px' }} alignSelf="center" direction="row-responsive" flex="grow" wrap>
+                <Box width={{ max: '1000px' }} justify="center" direction="row-responsive" flex="grow" wrap>
                     <CircleMeter label="Java/Typescript" value={99} />
                     <CircleMeter label="GoLang" value={88} />
                     <CircleMeter label="Python" value={75} />
