@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
             gap="large"
             style={{ opacity: '1' }}
             background="rgba(23, 57, 67, 0.69)"
-            justify="around"
+            justify="evenly"
         >
             <Image width={imgSize} src={`${process.env.PUBLIC_URL}/imgs/${image}.png`} />
             <Heading level="3">{category}</Heading>
