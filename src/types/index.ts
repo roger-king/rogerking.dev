@@ -5,6 +5,11 @@ export interface Work {
     location: string;
 }
 
+export interface LanguageConfidence {
+    language: string;
+    value: number;
+}
+
 export interface Tech {
     img: string;
     category: 'Front End' | 'Back End' | 'DevOps';
