@@ -67,7 +67,7 @@ const HomePage: React.FC = () => {
             </Box>
             <Box align="center">
                 <HeadLine level="3">Tech Stack</HeadLine>
-                <Box direction="column" gap="medium">
+                <Box direction="column" gap="medium" fill>
                     {techStack.map(
                         (t: Tech): JSX.Element => {
                             return <Card key={t.img} image={t.img} category={t.category} />;
@@ -79,7 +79,7 @@ const HomePage: React.FC = () => {
                 <HeadLine level="3">References</HeadLine>
                 <Box direction="column" gap="medium">
                     {getReferences().map((r: Reference) => (
-                        <Box key={r.name} gap="small" align="center" border="all" pad="large">
+                        <Box key={r.name} gap="small" align="center" width={{ max: '600px' }}>
                             <Heading level="2" margin="xsmall">
                                 {r.name}
                             </Heading>
