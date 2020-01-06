@@ -79,7 +79,7 @@ const HomePage: React.FC = () => {
             <Box align="center">
                 <HeadLine level="3">References</HeadLine>
                 <Box direction="column" gap="medium">
-                    <Carousel fill>
+                    <Carousel fill play={10000}>
                         {getReferences().map((r: Reference) => (
                             <Box key={r.name} gap="small" align="center" width={{ max: '600px' }} margin="large">
                                 <Heading level="2" margin="xsmall">
