@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
             align="center"
             width={{ min: 'auto' }}
             height={containerHeight}
-            direction="row-responsive"
+            direction="row"
             pad="medium"
             gap="large"
             style={{ opacity: '1' }}
