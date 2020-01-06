@@ -5,8 +5,9 @@ import { techStack, workHistory } from '../app.constants';
 import Avatar from '../components/avatar';
 import HeadLine from '../components/headline';
 import { CircleMeter } from '../components/meter/circle';
-import { Tech } from '../../types';
+import { Tech, LanguageConfidence } from '../../types';
 import Card from '../components/card';
+import { getLanguages } from '../data/languages';
 
 const HomePage: React.FC = () => {
     const size = React.useContext(ResponsiveContext);
@@ -56,10 +57,11 @@ const HomePage: React.FC = () => {
             <Box align="center" gap="medium">
                 <HeadLine level="3">Language Confidence</HeadLine>
                 <Box width={{ max: '1000px' }} justify="center" direction="row-responsive" flex="grow" wrap>
-                    <CircleMeter label="Java/Typescript" value={99} />
-                    <CircleMeter label="GoLang" value={88} />
-                    <CircleMeter label="Python" value={75} />
-                    <CircleMeter label="Java" value={60} />
+                    {getLanguages().map(
+                        (l: LanguageConfidence): JSX.Element => (
+                            <CircleMeter label={l.language} value={l.value} />
+                        ),
+                    )}
                 </Box>
             </Box>
             <Box align="center">
