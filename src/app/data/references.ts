@@ -13,6 +13,12 @@ const references: Reference[] = [
         testimonial:
             'I have worked with Roger for a few years, and in few companies/roles. He never fails to deliver.  His diverse skill set from technology to creative/design makes him a strong contributor to the team. \nI would also like to acknowledge Rogers creative solutions and commitment to task completion that I have had the pleasure of witnessing. His growth and determination have made working with him both rewarding and pleasurable.',
     },
+    {
+        name: 'Larry Presswood',
+        relation: 'Lead Architect @ Zillion Group',
+        testimonial:
+            'I have worked with Roger on a very time critical project which literally if not done could put the company out of business and Roger hit a home run!!\nHe worked very closely with his team members to produce mission critical dashboard/scheduler. Roger also has very good cloud/Devops skills.\nI would be happy to work with Roger in the future.',
+    },
 ];
 
 export const getReferences = (): Reference[] => {
